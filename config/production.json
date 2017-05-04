@@ -1,4 +1,11 @@
 {
   "host": "psychedelic-weenie-app.feathersjs.com",
-  "port": "PORT"
+  "port": "PORT",
+  "authentication": {
+    "github": {
+      "clientID": "GITHUB_CLIENT_ID",
+      "clientSecret": "GITHUB_CLIENT_SECRET",
+      "successRedirect": "/"
+    }
+  }
 }

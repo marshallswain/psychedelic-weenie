@@ -5,5 +5,35 @@
   "paginate": {
     "default": 10,
     "max": 50
-  }
+  },
+  "authentication": {
+    "secret": "33d3a93e78847cc7abdcf5f4b52cc6e0e72edc0730100431c31c7a09423e8fca2f916b6d0676cef6fabf8e71199871b72b9c26ea6f546618dae8a42137704bad4da2c24d6b594bdebf28f3431bbad4ef985829c07335aee43232e71d1e578d696fefd953c39faaa7dbc41f0a8243d9ae5f9d335b54170c49331c7fbda9c404fb6280ba765239aaacd65cc76e8d6fce7bd46bc535cd5993aa43520025509becde0ef50edfc02433beeefbf8ab9abbba23c88ef08c52f6336df6747aa34736c2b821e97bffcc17d4b8fed7a58f183e09097fd4a14d4d37a7bdd72d6a72247194fdfcad6b59dad9fc91b151ef7a93febe734b5fd6fa39bb3e585337c88914b7ae53",
+    "strategies": [
+      "jwt"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "github": {
+      "clientID": "your github client id",
+      "clientSecret": "your github client secret",
+      "successRedirect": "/"
+    },
+    "cookie": {
+      "enabled": true,
+      "name": "feathers-jwt",
+      "httpOnly": false,
+      "secure": false
+    }
+  },
+  "nedb": "../data"
 }
